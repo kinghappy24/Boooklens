@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* CSS-Datei */
+
+
+html, body {
+    min-width: 800px;
+    min-height: 58em; /* Setzt die minimale Höhe */
+    background: linear-gradient(to bottom, #E6F4FF, #AAEEFF) no-repeat;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropbtn {
+    font-size: 1em;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    color: #6470B6;
+    height: 2.5em;
+    padding: 0.6em;
+    border: #272c48;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    background-color: #BBC5FF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-image: url("Bilder/filter-icon.png");
+    background-size: 1.5em;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 3em;
+}
+
+.dropbtn:hover {
+    background-color: #666;
+}
+
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 80%; /* Positioniert das Dropdown-Menü direkt unter dem Button */
+    left: 0; /* Positioniert das Dropdown-Menü am linken Rand des Buttons */
+    min-width: 300px;
+    z-index: 1;
+}
+
+.dropdown-content label {
+    color: #6470B6;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    width: 9em;
+    height: 1.5em;
+    border-radius: 5px;
+    border: 1px solid #a6b4e0;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.1);
+    background-color: #BBC5FF;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+main {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+
+
+/* Styles für formular */
+
+form {
+    color: #6470B6;
+    padding-top: 7em; /* Fügt Polsterung hinzu, um das Formular größer zu machen */
+    margin: 10px; /* Erstellt einen Abstand um die Ränder */
+    overflow: visible; /* Stellt sicher, dass die untergeordneten Elemente nicht aus dem runden Formular herauslaufen */
+    font-size: 1em;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+
+}
+
+
+form .found_books {
+    color: #9EB3CF;
+    margin: 1em;
+    font-family: 'Segoe UI', sans-serif;
+    font-style: italic;
+}
+
+
+form label, .dropdown {
+    width: 4em;
+    height: 2.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+}
+
+
+
+
+form .suche  {
+    font-size: 1em;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    color: #6470B6;
+    width: 20em;
+    height: 2.5em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    background-color: #BBC5FF;
+    background-image: url('Bilder/search-icon.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 2em;
+
+}
+
+form input[type="submit"] {
+    font-size: 1em;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    color: #6470B6;
+    width: 6em;
+    height: 2.5em;
+    padding: 5px;
+    border: #272c48;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    background-color: #BBC5FF;
+    margin-left: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+form input[type="submit"]:hover {
+    background-color: #666;
+}
+
+form select {
+    font-size: 1em;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    color: #929BD3;
+    width: 10em;
+    height: 2.5em;
+    padding: 1px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    background-color: #BBC5FF;
+    margin: 0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.book-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book-item {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(16.66% - 20px);
+    margin: 20px 10px 20px 10px;
+    box-sizing: border-box;
+    position: relative;
+    background: linear-gradient(to bottom, #A9C0FD, #51A0DC);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 1.5em;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 0;
+}
+
+
+.book-details-link {
+    text-decoration: none;
+    color: #333;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .book-item {
+        width: calc(25% - 20px);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .book-item {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .book-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .book-item {
+        width: calc(100% - 20px);
+    }
+}
+
+.book-item img {
+    border-radius: 1.5em;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+.book-details {
+    visibility: hidden;
+    position: absolute;
+    bottom: 14%;
+    right: 3%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0.5em 0.5em 2em 0.6em rgba(0, 0, 0, 0.6);
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeout 0.2s;
+    transition: visibility 0.2s;
+}
+
+.book-details p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.book-item:hover .book-details {
+    visibility: visible;
+    animation: fadein 0.5s;
+}
+
+
+.book-item h2 {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.book-item p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+}
+
+
+
+.page-number {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.page-number:hover {
+    background-color: #e9e9e9;
+}
+
+.page-arrow {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.page-arrow:hover {
+    background-color: #666;
+}
+
+.current-page {
+    background-color: #333;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    width: 100%;
+    margin: auto;
+    height: 900px;
+    
+    
+    
+    
+    
+}
+
+.book-card {
+    display: flex;
+    flex-direction: row; 
+    background-image: linear-gradient(to bottom, #a8c0fd, #53a1dd); /* Farbverlauf von oben nach unten */
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    margin-top: 50px;    
+    width: auto;
+    height: 640px;
+    outline: 1.0px   outset  rgb(0, 0, 0);
+
+    
+    
+
+
+    
+}
+
+.Images2 {
+    order: 1; 
+    
+}
+
+.Infos2 {
+    order: 2;
+    padding-left: 0;
+    margin-left: 0; 
+}
+.book-title {
+    font-size: 50px;
+    color: #ffe6f4;
+    margin-bottom: 10px;
+    padding-top: 0px;
+    padding-left: 60px;
+    font-weight: bold;
+    margin-top: 13px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.176);
+    
+
+    
+}
+
+.book-author{
+    padding-left: 40px;
+    font-size: 35px;
+    color: #ffe7a7;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: -3px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.176);
+
+    
+}
+
+
+.book-description {
+    font-size: 27px;
+    color: #ffffff;
+    padding-left: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.176);
+
+
+}
+
+
+.book-cover {
+  
+    overflow: hidden; /* Add this line */
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.324));
+}
+
+
+
+
+.book-cover img {
+    width: 350px;
+    
+    height: auto;
+    margin: 0%;
+    padding: 0%;
+    margin-top: 40px;
+    margin-left: 20px;
+    border-radius: 30px;
+    animation: fadein 2s;
+
+
+
+    
+  
+   
+}
+
+.book-info {
+    order: 3;
+   
+}
+
+
+
+.title-container {
+    transform: translateX(-20px); 
+}
+
+
+
+
+
+
+.genre-wrapper {
+    background-color: #d072ae; 
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    outline: 1.5px   outset  rgb(0, 0, 0);
+
+
+    margin-top: 700px;
+    margin-left: 720px;
+}
+
+.genre-label {
+    font-size: 35px;
+    color: white; 
+    font-weight: bold;
+}
+
+.genre-name {
+    outline: 1.5px   outset  rgb(0, 0, 0);
+
+    font-size: 35px;
+    background-color: #ffb6df; 
+    border-radius: 5px;
+    padding: 2px 8px;
+    color: white; 
+    font-weight: bold;
+}
+
+
+
+.star-rating {
+    font-size: 50px;
+    color: rgb(255, 208, 0);
+    align-items: center;
+
+    padding-left: 65px;
+
+    padding-top: 20px;
+
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.176);
+    -webkit-text-stroke: 1.5px black;
+
+  }
+  
+  .author-name {
+    text-decoration: underline; 
+}
+
+
